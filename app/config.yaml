@@ -1,0 +1,64 @@
+# TTS-AudioBook-Pro Configuration
+# Default settings for the application
+
+app:
+  name: "TTS-AudioBook-Pro"
+  version: "1.0.0"
+  host: "127.0.0.1"
+  port: 7860
+
+tts:
+  default_engine: "kokoro"  # "kokoro" or "chatterbox"
+  default_voice: "af_heart"
+  default_format: "mp3"
+  default_bitrate: 128
+  
+  kokoro:
+    speed: 1.0
+    pitch: 0.0
+  
+  chatterbox:
+    exaggeration: 0.5
+    cfg_weight: 0.3
+
+ocr:
+  default_engine: "paddleocr"
+  default_language: "en"
+  confidence_threshold: 0.7
+  cache_results: true
+  dpi: 300
+
+gpu:
+  device: "cuda"
+  max_vram_gb: 18
+  enable_fp16: true
+  enable_tf32: true
+  clear_cache_between_jobs: true
+
+library:
+  path: "library/audiobooks"
+  max_size_gb: 100
+  auto_cleanup: false
+  normalize_audio: true
+  normalization_lufs: -23
+
+audio:
+  sample_rate: 24000
+  silence_between_chapters_ms: 2000
+  formats:
+    mp3:
+      bitrates: [64, 96, 128, 192, 256, 320]
+      default_bitrate: 128
+    wav:
+      bit_depth: 16
+    flac:
+      compression_level: 5
+    ogg:
+      quality: 5
+
+chapter_detection:
+  min_chapter_length: 500
+  patterns:
+    - "(?i)^(?:chapter|chap\\.?)\\s+(\\d+|one|two|three|four|five|six|seven|eight|nine|ten)\\s*[:\\-\\.]?\\s*(.*)$"
+    - "(?i)^(?:part)\\s+(\\d+|[ivxlcdm]+)\\s*[:\\-\\.]?\\s*(.*)$"
+    - "(?i)^(prologue|epilogue|introduction|preface|conclusion)\\s*[:\\-\\.]?\\s*(.*)$"

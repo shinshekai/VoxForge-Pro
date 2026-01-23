@@ -1,0 +1,75 @@
+# Virtual environment
+app/env/
+env/
+venv/
+
+# Downloaded models (large files)
+app/models/
+models/
+
+# Generated audiobooks
+app/library/
+library/
+
+# OCR cache
+app/cache/
+cache/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Logs
+logs/
+*.log
+
+# Environment variables
+.env
+ENVIRONMENT
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# AI Agent internal files
+.clinerules
+.cursorrules
+.windsurfrules
+.geminiignore
+.windsurf/
+.agent/
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+PROMPT.md
+QWEN.md
+brain/
