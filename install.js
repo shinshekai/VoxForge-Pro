@@ -40,7 +40,9 @@ module.exports = {
                     "uv pip install sqlalchemy",
                     "uv pip install python-dotenv pyyaml",
                     "uv pip install tqdm rich",
-                    "uv pip install devicetorch"
+                    "uv pip install devicetorch",
+                    "uv pip install ordered-set",
+                    "uv pip install perth"
                 ]
             }
         },
